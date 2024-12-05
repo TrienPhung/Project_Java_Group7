@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @author ACER
  */
 public class TestJDBC {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ClassNotFoundException{
         try {
             Connection con = JDBC_MySql.CSDL();
             if(con != null){

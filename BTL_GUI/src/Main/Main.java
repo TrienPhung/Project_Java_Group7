@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author ACER
  */
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
          // Tạo đối tượng giao diện
         HocVienView view = new HocVienView();
 

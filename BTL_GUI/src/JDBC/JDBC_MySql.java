@@ -14,9 +14,10 @@ import java.sql.SQLException;
 public class JDBC_MySql {
     private static final String url = "jdbc:mysql://localhost:3306/qlhocvien";
     private static final String user = "root";
-    private static final String password = "Trien1112003#";
+    private static final String password = "";
     private static Connection conn;
-    public static Connection CSDL() throws SQLException{
+    public static Connection CSDL() throws SQLException, ClassNotFoundException{
+        Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection(url, user, password);
         return con;
     }

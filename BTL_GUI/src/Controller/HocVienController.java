@@ -29,7 +29,7 @@ public class HocVienController {
         this.model = model;
 
         // Load dữ liệu vào bảng khi khởi động
-        //loadTableData();
+        loadTableData();
         // Xử lý sự kiện nút Hiển thị
         view.getBtnShow().addActionListener(new ActionListener() {
             @Override

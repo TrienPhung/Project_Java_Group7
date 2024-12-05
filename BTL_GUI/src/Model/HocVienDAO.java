@@ -17,7 +17,7 @@ public class HocVienDAO {//Model - Database Access Object
 
     private final Connection connection;
 
-    public HocVienDAO() throws SQLException {
+    public HocVienDAO() throws SQLException, ClassNotFoundException {
         this.connection = JDBC_MySql.CSDL();
     }
 
