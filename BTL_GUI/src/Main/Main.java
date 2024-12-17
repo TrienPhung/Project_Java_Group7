@@ -4,9 +4,7 @@
  */
 package Main;
 
-import Controller.HocVienController;
-import Model.HocVienDAO;
-import View.HocVienView;
+import LoginRegister.Login;
 import java.sql.SQLException;
 
 /**
@@ -15,16 +13,7 @@ import java.sql.SQLException;
  */
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-         // Tạo đối tượng giao diện
-        HocVienView view = new HocVienView();
-
-        // Tạo đối tượng model (DAO)
-        HocVienDAO model = new HocVienDAO();
-
-        // Tạo đối tượng controller
-        HocVienController controller = new HocVienController(view, model);
-
-        // Hiển thị giao diện
-        view.setVisible(true);
+         Login login = new Login();
+         login.setVisible(true);
     }
 }

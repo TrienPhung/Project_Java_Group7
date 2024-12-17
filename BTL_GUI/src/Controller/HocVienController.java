@@ -86,14 +86,7 @@ public class HocVienController {
         view.getBtnReset().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getTxtMaHocVien().setText("");
-                view.getTxtTenHocVien().setText("");
-                view.getBtnGroupGender().clearSelection();
-                view.getTxtTuoi().setText("");
-                view.getTxtEmail().setText("");
-                view.getTxtComboBoxAddress().setSelectedIndex(0);
-                view.getTxtDiemTB().setText("");
-                view.getTxtTimKiemTen().setText("");
+                Reset();
             }
         });
         // Xử lý sự kiện khi ấn chuột
@@ -220,18 +213,28 @@ public class HocVienController {
                 return;
             }
             HocVien newHocVien = new HocVien(maHocVien, tenHocVien, gioiTinhHV, tuoi, email, queQuan, diemTB);
-            // Lấy vị trí muốn chèn
-            int position = Integer.parseInt(view.getTxtPosition().getText());
+
+            int position;
             // Lấy danh sách học viên hiện tại
             List<HocVien> hocVienList = model.getAllHocVien();
-            if (position < 0 || position > hocVienList.size()) {
-                JOptionPane.showMessageDialog(view, "Vị trí không hợp lệ!");
+            try {
+                // Lấy vị trí muốn chèn
+                String positionInput = JOptionPane.showInputDialog(view, "Nhập vị trí chèn (1 là đầu tiên):");
+                position = Integer.parseInt(positionInput) - 1; // Bắt đầu từ 0
+                if (position < 0 || position > hocVienList.size()) {
+                    JOptionPane.showMessageDialog(view, "Vị trí không hợp lệ!");
+                    return;
+                } else {
+                    if (model.insertHocVienAt(hocVienList, newHocVien, position)) {
+                        loadTableData(); // Tải lại dữ liệu bảng
+                        JOptionPane.showMessageDialog(view, "Chèn học viên thành công!");
+                    } else {
+                        JOptionPane.showMessageDialog(view, "Chèn học viên thất bại!");
+                    }
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(view, "Vị trí phải là số!");
                 return;
-            } else {
-                // Chèn học viên vào danh sách tại vị trí chỉ định
-                model.insertHocVienAt(hocVienList, newHocVien, position);
-                loadTableData(); // Tải lại dữ liệu bảng
-                JOptionPane.showMessageDialog(view, "Chèn học viên thành công!");
             }
 
         } catch (Exception ex) {
@@ -300,6 +303,7 @@ public class HocVienController {
             if (model.deleteHocVien(maDelete)) {
                 JOptionPane.showMessageDialog(view, "Xóa học viên thành công!");
                 loadTableData(); // Tải lại dữ liệu bảng
+                Reset();
             } else {
                 JOptionPane.showMessageDialog(view, "Xóa học viên thất bại!");
             }
@@ -363,5 +367,17 @@ public class HocVienController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Reset dữ liệu
+    private void Reset() {
+        view.getTxtMaHocVien().setText("");
+        view.getTxtTenHocVien().setText("");
+        view.getBtnGroupGender().clearSelection();
+        view.getTxtTuoi().setText("");
+        view.getTxtEmail().setText("");
+        view.getTxtComboBoxAddress().setSelectedIndex(0);
+        view.getTxtDiemTB().setText("");
+        view.getTxtTimKiemTen().setText("");
     }
 }

@@ -61,7 +61,7 @@ public class HocVienDAO {//Model - Database Access Object
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, hv.getTenHv());
         statement.setString(2, hv.getGioiTinh());
-        statement.setInt(3, hv.getTuoi());    
+        statement.setInt(3, hv.getTuoi());
         statement.setString(4, hv.getEmail());
         statement.setFloat(5, hv.getDiemTB());
         statement.setString(6, hv.getQuequan());
@@ -99,12 +99,35 @@ public class HocVienDAO {//Model - Database Access Object
         }
         return list;
     }
-     // Chèn học viên vào danh sách tại vị trí cụ thể
-    public void insertHocVienAt(List<HocVien> list, HocVien hocVien, int position) {
-        if (position < 0 || position > list.size()) {
-            System.out.println("Vị trí không hợp lệ!");
-            return;
+    // Chèn học viên vào danh sách tại vị trí cụ thể
+
+    public boolean insertHocVienAt(List<HocVien> list, HocVien hocVien, int position) throws SQLException {
+        try {
+            list.add(position, hocVien); // Thêm học viên tại vị trí
+            connection.setAutoCommit(false);
+            try (Statement stmt = connection.createStatement()) {
+                stmt.executeUpdate("DELETE FROM HocVien");
+            }
+            String insertQuery = "INSERT INTO HocVien(maHv, tenHv, gioiTinh,tuoi, email,quequan,diemTB) VALUES (?, ?, ?, ?, ?, ?,?);";
+            try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
+                for (HocVien hv : list) {
+                    statement.setString(1, hv.getMaHv());
+                    statement.setString(2, hv.getTenHv());
+                    statement.setString(3, hv.getGioiTinh());
+                    statement.setInt(4, hv.getTuoi());
+                    statement.setString(5, hv.getEmail());
+                    statement.setString(6, hv.getQuequan());
+                    statement.setFloat(7, hv.getDiemTB());
+                    statement.executeUpdate();  
+                }
+            };
+            connection.commit();
+            connection.setAutoCommit(true);
+            return true;
+        } catch (Exception e) {
+            connection.rollback();
+            return false;
         }
-        list.add(position, hocVien); // Thêm học viên tại vị trí
+       
     }
 }
