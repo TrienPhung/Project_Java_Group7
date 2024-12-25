@@ -4,13 +4,19 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/LoginRegister/Register.java</file>
-            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Controller/HocVienController.java</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Icons/Delete.png</file>
             <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Model/HocVienDAO.java</file>
             <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/JDBC/JDBC_MySql.java</file>
             <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Main/Main.java</file>
             <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/JDBC/TestJDBC.java</file>
-            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/LoginRegister/User.java</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Model/HocVien.java</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Icons/Add.png</file>
             <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/LoginRegister/Login.java</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/View/HocVienView.java</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Controller/HocVienController.java</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Icons/User.png</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/Icons/Edit.png</file>
+            <file>file:/D:/BTL_Java_Group7/BTL_GUI/src/LoginRegister/User.java</file>
         </group>
     </open-files>
 </project-private>

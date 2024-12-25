@@ -51,9 +51,11 @@ public class Register extends javax.swing.JFrame {
 
         Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Username.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Username.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/User.png"))); // NOI18N
         Username.setText("Username");
 
         ConfirmPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ConfirmPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Confirm_Password.png"))); // NOI18N
         ConfirmPassword.setText("Confirm Password");
 
         textUsername.setForeground(new java.awt.Color(0, 0, 0));
@@ -89,11 +91,13 @@ public class Register extends javax.swing.JFrame {
         });
 
         Email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Email.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Mail.png"))); // NOI18N
         Email.setText("Email");
 
         textPassword.setForeground(new java.awt.Color(0, 0, 0));
 
         Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Lock.png"))); // NOI18N
         Password.setText("Password");
 
         textConfirmPassword.setForeground(new java.awt.Color(0, 0, 0));
@@ -125,7 +129,7 @@ public class Register extends javax.swing.JFrame {
                         .addComponent(textUsername, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnRegister, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnBacktoLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ConfirmPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ConfirmPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

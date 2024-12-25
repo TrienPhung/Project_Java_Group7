@@ -49,9 +49,11 @@ public class Login extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Username.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/User.png"))); // NOI18N
         Username.setText("Username");
 
         Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Lock.png"))); // NOI18N
         Password.setText("Password");
 
         textPassword.setForeground(new java.awt.Color(0, 0, 0));
