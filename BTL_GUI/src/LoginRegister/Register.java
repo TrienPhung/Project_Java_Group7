@@ -4,11 +4,9 @@
  */
 package LoginRegister;
 
-import Model.HocVien;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,7 +46,7 @@ public class Register extends javax.swing.JFrame {
         textEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Register");
         setBackground(new java.awt.Color(255, 255, 255));
 
         Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
