@@ -10,7 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+//import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 /**
  *
@@ -23,7 +23,7 @@ public class HocVienView extends javax.swing.JFrame {
      */
     public HocVienView() {
         initComponents();
-        AutoCompleteDecorator.decorate(txtComboBoxAddress);
+//        AutoCompleteDecorator.decorate(txtComboBoxAddress);
         this.setLocationRelativeTo(null);
     }
 

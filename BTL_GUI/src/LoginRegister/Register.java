@@ -21,6 +21,8 @@ public class Register extends javax.swing.JFrame {
      */
     public Register() {
         initComponents();
+        this.iconHideDisplay.setVisible(false);
+        this.iconHideDisplayConfirm.setVisible(false);
         this.setLocationRelativeTo(null);
     }
 
@@ -44,6 +46,10 @@ public class Register extends javax.swing.JFrame {
         Password = new javax.swing.JLabel();
         textConfirmPassword = new javax.swing.JPasswordField();
         textEmail = new javax.swing.JTextField();
+        iconDisplay = new javax.swing.JLabel();
+        iconHideDisplay = new javax.swing.JLabel();
+        iconDisplayConfirm = new javax.swing.JLabel();
+        iconHideDisplayConfirm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Register");
@@ -109,6 +115,34 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        iconDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/display.png"))); // NOI18N
+        iconDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconDisplayMousePressed(evt);
+            }
+        });
+
+        iconHideDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/hide_display.png"))); // NOI18N
+        iconHideDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconHideDisplayMousePressed(evt);
+            }
+        });
+
+        iconDisplayConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/display.png"))); // NOI18N
+        iconDisplayConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconDisplayConfirmMousePressed(evt);
+            }
+        });
+
+        iconHideDisplayConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/hide_display.png"))); // NOI18N
+        iconHideDisplayConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconHideDisplayConfirmMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,8 +153,18 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(iconDisplayConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(iconHideDisplayConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(iconDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(iconHideDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
@@ -130,7 +174,7 @@ public class Register extends javax.swing.JFrame {
                         .addComponent(btnRegister, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnBacktoLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ConfirmPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,11 +192,23 @@ public class Register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(iconHideDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(iconDisplay))))
                 .addGap(15, 15, 15)
                 .addComponent(ConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(iconHideDisplayConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(iconDisplayConfirm))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -194,7 +250,7 @@ public class Register extends javax.swing.JFrame {
                     User user = new User(rs.getString("username"), rs.getString("password"));
                     listUsers.add(user);
                 }
-                
+
                 for (User user : listUsers) {
                     if (user.getUsername().equalsIgnoreCase(username)) {
                         JOptionPane.showMessageDialog(this, "Tài khoản đã tồn tại!");
@@ -202,7 +258,7 @@ public class Register extends javax.swing.JFrame {
                         return;
                     }
                 }
-                if(check) {
+                if (check) {
                     User user = new User(username, password, email);
                     String sqlUpdate = "INSERT INTO User(username, password, email) VALUES (?, ?, ?);";
                     PreparedStatement statementUpdate = con.prepareStatement(sqlUpdate);
@@ -213,8 +269,8 @@ public class Register extends javax.swing.JFrame {
                     if (row != 0) {
                         JOptionPane.showMessageDialog(this, "Đăng ký thành công!");
                         this.setVisible(false);
-                        
-        new Login().setVisible(true);
+
+                        new Login().setVisible(true);
                     } else {
                         JOptionPane.showMessageDialog(this, "Đăng ký thất bại!");
                     }
@@ -240,6 +296,36 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textEmailActionPerformed
 
+    private void iconDisplayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconDisplayMousePressed
+        // TODO add your handling code here:
+        iconHideDisplay.setVisible(true);
+        iconDisplay.setVisible(false);
+        textPassword.setEchoChar(((char) 0));
+    }//GEN-LAST:event_iconDisplayMousePressed
+
+    private void iconHideDisplayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconHideDisplayMousePressed
+        // TODO add your handling code here:
+        iconHideDisplay.setVisible(false);
+        iconDisplay.setVisible(true);
+        textPassword.setEchoChar('*');
+    }//GEN-LAST:event_iconHideDisplayMousePressed
+
+    private void iconDisplayConfirmMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconDisplayConfirmMousePressed
+        // TODO add your handling code here:
+        iconHideDisplayConfirm.setVisible(true);
+        iconDisplayConfirm.setVisible(false);
+        textConfirmPassword.setEchoChar(((char) 0));
+
+    }//GEN-LAST:event_iconDisplayConfirmMousePressed
+
+    private void iconHideDisplayConfirmMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconHideDisplayConfirmMousePressed
+        // TODO add your handling code here:
+        iconHideDisplayConfirm.setVisible(false);
+        iconDisplayConfirm.setVisible(true);
+        textConfirmPassword.setEchoChar('*');
+
+    }//GEN-LAST:event_iconHideDisplayConfirmMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -254,16 +340,24 @@ public class Register extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -291,6 +385,10 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel Username;
     private javax.swing.JButton btnBacktoLogin;
     private javax.swing.JButton btnRegister;
+    private javax.swing.JLabel iconDisplay;
+    private javax.swing.JLabel iconDisplayConfirm;
+    private javax.swing.JLabel iconHideDisplay;
+    private javax.swing.JLabel iconHideDisplayConfirm;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField textConfirmPassword;
     private javax.swing.JTextField textEmail;

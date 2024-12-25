@@ -29,18 +29,22 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="Username" min="-2" pref="106" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="textPassword" min="-2" pref="217" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="iconDisplay" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="iconHideDisplay" min="-2" pref="37" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
+                  <Component id="Username" min="-2" pref="106" max="-2" attributes="0"/>
                   <Component id="textUsername" alignment="0" min="-2" pref="217" max="-2" attributes="0"/>
                   <Component id="Password" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
-                  <Component id="textPassword" alignment="0" min="-2" pref="217" max="-2" attributes="0"/>
                   <Component id="btnLogin" alignment="0" min="-2" pref="217" max="-2" attributes="0"/>
                   <Component id="btnRegisterNow" alignment="0" min="-2" pref="217" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="121" max="32767" attributes="0"/>
+              <EmptySpace pref="78" max="32767" attributes="0"/>
           </Group>
           <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
       </Group>
@@ -57,11 +61,22 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="Password" min="-2" pref="32" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="textPassword" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-              <Component id="btnLogin" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnRegisterNow" min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="textPassword" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="btnLogin" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnRegisterNow" min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="iconHideDisplay" min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="iconDisplay" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
               <EmptySpace pref="77" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -149,6 +164,26 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterNowActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iconDisplay">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Icons/display.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="iconDisplayMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iconHideDisplay">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Icons/hide_display.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="iconHideDisplayMousePressed"/>
       </Events>
     </Component>
   </SubComponents>

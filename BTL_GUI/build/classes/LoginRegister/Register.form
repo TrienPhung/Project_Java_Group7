@@ -33,8 +33,22 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="textEmail" min="-2" pref="217" max="-2" attributes="0"/>
                   <Component id="Password" min="-2" pref="106" max="-2" attributes="0"/>
-                  <Component id="textConfirmPassword" min="-2" pref="217" max="-2" attributes="0"/>
-                  <Component id="textPassword" min="-2" pref="217" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="textConfirmPassword" min="-2" pref="217" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="iconDisplayConfirm" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="iconHideDisplayConfirm" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="textPassword" min="-2" pref="217" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="iconDisplay" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="iconHideDisplay" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <Component id="Email" min="-2" pref="106" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
@@ -47,7 +61,7 @@
                       <Component id="ConfirmPassword" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="116" max="32767" attributes="0"/>
+              <EmptySpace pref="73" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,11 +81,29 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="Password" min="-2" pref="32" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="textPassword" min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="textPassword" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="iconHideDisplay" alignment="0" min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="iconDisplay" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="ConfirmPassword" min="-2" pref="32" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="textConfirmPassword" min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="textConfirmPassword" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="iconHideDisplayConfirm" alignment="0" min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="iconDisplayConfirm" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
               <EmptySpace pref="75" max="32767" attributes="0"/>
               <Component id="btnRegister" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -203,6 +235,46 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textEmailActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iconDisplay">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Icons/display.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="iconDisplayMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iconHideDisplay">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Icons/hide_display.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="iconHideDisplayMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iconDisplayConfirm">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Icons/display.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="iconDisplayConfirmMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iconHideDisplayConfirm">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Icons/hide_display.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="iconHideDisplayConfirmMousePressed"/>
       </Events>
     </Component>
   </SubComponents>
