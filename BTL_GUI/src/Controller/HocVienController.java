@@ -100,7 +100,7 @@ public class HocVienController {
                 String gioiTinhHV = view.getjTable().getValueAt(row, 2).toString();
                 String tuoi = view.getjTable().getValueAt(row, 3).toString();
                 String email = view.getjTable().getValueAt(row, 4).toString();
-                String queQuan = view.getjTable().getValueAt(row, 5).toString();
+                String queQuan = view.getjTable().getValueAt(row, 5).toString().trim();
                 String diemTB = view.getjTable().getValueAt(row, 6).toString();
 
                 //Dua gia tri vua chon len TextFiled
@@ -115,10 +115,18 @@ public class HocVienController {
                 }
                 view.getTxtTuoi().setText(tuoi);
                 view.getTxtEmail().setText(email);
+               
                 if (queQuan.equals("")) {
                     view.getTxtComboBoxAddress().setSelectedIndex(0);
                 } else {
-                    view.getTxtComboBoxAddress().setSelectedItem(queQuan);
+                    for(int i = 0; i < view.getTxtComboBoxAddress().getItemCount();i++){
+                        String item = (String)view.getTxtComboBoxAddress().getItemAt(i).trim();
+                        if(item.equals(queQuan)){
+                         
+                            view.getTxtComboBoxAddress().setSelectedItem(item.toString().trim());
+                            break;
+                        }
+                    }
                 }
                 view.getTxtDiemTB().setText(diemTB);
             }

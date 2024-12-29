@@ -4,7 +4,7 @@
  */
 package Main;
 
-import LoginRegister.Login;
+import View.Login;
 import java.sql.SQLException;
 
 /**
